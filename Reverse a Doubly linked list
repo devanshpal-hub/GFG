@@ -9,3 +9,20 @@ Node *reverse(Node *head) {
         head->next=nullptr;
         return newhead;
     }
+
+//Using iteration
+
+Node *reverse(Node *head) {
+     if(head==NULL || head->next==NULL)
+        return head;
+        Node *pre=NULL,*curr=head;
+       while(curr!=NULL)
+       {
+           pre=curr->prev;
+           curr->prev=curr->next;
+           curr->next=pre;
+           curr=curr->prev;
+       }
+        
+    return pre->prev;
+}
