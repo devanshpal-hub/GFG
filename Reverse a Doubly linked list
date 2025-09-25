@@ -1,0 +1,11 @@
+//Using recursion
+
+Node *reverse(Node *head) {
+        // code here
+        if (head==nullptr || head->next==nullptr) return head;
+        Node *newhead = reverse(head->next);
+        head->next->next=head;
+        head->prev=head->next;
+        head->next=nullptr;
+        return newhead;
+    }
