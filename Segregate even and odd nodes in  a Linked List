@@ -1,0 +1,33 @@
+
+// Using vector 
+
+ Node* divide(Node* head) {
+        // code here
+        if (head==nullptr || head->next == nullptr) 
+            return head;
+        vector <int> odd,even;
+        Node *p=head;
+        
+        while(p!=nullptr) {
+            if (p->data%2==0) {
+                even.push_back(p->data);
+            }
+            else{
+                odd.push_back(p->data); 
+            }
+            p=p->next;
+        }
+        p=head;
+        int i=0,j=0;
+        while(p!=nullptr) {
+            if (i<even.size()) {
+                p->data=even[i++];
+            }
+            else {
+                p->data=odd[j++];
+            }
+            p=p->next;
+        }
+        return head;
+        
+    }
