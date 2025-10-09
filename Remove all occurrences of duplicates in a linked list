@@ -1,0 +1,18 @@
+
+//Brute force approach
+ Node* removeAllDuplicates(struct Node* head) {
+        // code here
+        Node *p=head,*q=head;
+        while(p!=NULL) {
+            int f=0;
+            q=head;
+            while(q!=NULL) {
+                if (p->data==q->data) f++;
+                if (f>1) break;
+                q=q->next;
+            }
+            if (f==1) cout<<p->data<<" ";
+            p=p->next;
+        }
+        return NULL;
+    }
