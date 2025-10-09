@@ -31,3 +31,21 @@
         return head;
         
     }
+
+//using map
+
+    Node* removeAllDuplicates(struct Node* head) {
+        // code here
+        Node *t=head;
+        map<int,int>m;
+        while(t!=NULL) {
+            m[t->data]++;
+            t=t->next;
+        }
+        t=head;
+        while(t!=NULL) {
+            if (m[t->data]==1) cout<<t->data<<" ";
+            t=t->next;
+        }
+        return NULL;
+    }
