@@ -1,0 +1,26 @@
+
+
+int compare(Node *head1, Node *head2) {
+        // Code Here
+        Node *t1=head1,*t2=head2;
+        while(t1!=NULL && t2!=NULL) {
+            if (t1->data==t2->data) {
+                t1=t1->next;
+                t2=t2->next;
+                continue;
+            }
+            else if (t1->data>t2->data) {
+                return 1;
+            }
+            else {
+                return -1;
+            }
+        }
+        if (t1==NULL && t2==NULL) {
+            return 0;
+        }
+        else if (t1!=NULL  && t2==NULL) {
+            return 1;
+        }
+        return -1;
+    }
