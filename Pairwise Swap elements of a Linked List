@@ -10,3 +10,21 @@
         head->next=pairWiseSwap(p);
         return head1;
     }
+
+//Using iteration
+Node* pairWiseSwap(Node* head) {
+        // The task is to complete this method
+        if (head==nullptr || head->next==nullptr) return head;
+        Node *t1=head,*t2=head->next,*t3;
+        Node *ans=t2;
+        while(t1!=NULL) {
+            t3=t1;
+            t1->next=t2->next;
+            t2->next=t1;
+            t1=t1->next;
+            if (( t1==NULL && t3->next==t1) || (t3->next->next==NULL && t1->next==NULL)) return ans;
+            t2=t1->next;
+            t3->next=t2;
+        }
+        return ans;
+}
