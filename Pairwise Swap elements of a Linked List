@@ -1,0 +1,12 @@
+
+
+//using Recursion
+ Node* pairWiseSwap(Node* head) {
+        // The task is to complete this method
+        if (head==nullptr || head->next==nullptr) return head;
+        Node *p=head->next->next;
+        Node *head1=head->next;
+        head1->next=head;
+        head->next=pairWiseSwap(p);
+        return head1;
+    }
