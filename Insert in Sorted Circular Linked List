@@ -1,0 +1,26 @@
+
+
+Node* sortedInsert(Node* head, int data) {
+        // code here
+        Node *t=head;
+        Node *p = new Node(data);
+        p->next=p;
+        if (head==NULL) {
+            return p;
+        }
+        if (head->data > data) {
+            p->next=head;
+            while(t->next!=head) {
+                t=t->next;
+            }
+            t->next=p;
+            return p;
+        }
+        t=head;
+        while(t->next->data<data && t->next!=head) {
+            t=t->next;
+        }
+        p->next=t->next;
+        t->next=p;
+        return head;
+    }
