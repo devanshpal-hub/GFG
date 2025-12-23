@@ -1,4 +1,4 @@
-//T.C. = O(n)
+//T.C. = O(r-l+1)
 
 class Solution {
   public:
@@ -11,6 +11,22 @@ class Solution {
             if (b==0)  n= n| mask;
             else n= n^mask;
         }
+        return n;
+    }
+};
+
+//T.C. = O(1)
+
+class Solution {
+  public:
+    int toggleBits(int n, int l, int r) {
+        // code here
+        int ls = 1<<(l-1);
+        int rs = 1<<(r);
+        int lls = ls-1;
+        int rrs = rs-1;
+        int mask = lls^rrs;
+        n=n^mask;
         return n;
     }
 };
