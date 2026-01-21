@@ -1,0 +1,11 @@
+
+
+// User function Template for C++
+int distinct(vector<int>& arr) {
+    // Your code here
+    set<int>s;
+    for (int i : arr) {
+        s.insert(i);
+    }
+    return s.size();
+}
